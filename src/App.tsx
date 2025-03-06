@@ -1,10 +1,13 @@
 import './App.css'
+import { Routes, Route} from 'react-router-dom'
 
 function App() {
 
   return (
     <>
-      <h1 className='text-4xl font-bold'> Hello and Goodbye world!</h1> 
+    <Routes>
+      <Route path='/' ></Route>
+    </Routes>
     </>
   )
 }
