@@ -1,9 +1,19 @@
-import React, { useState } from "react";
+import React, { JSX, useState } from "react";
+import StorePage from "./StorePage";
+import PlanningPage from "./PlanningPage";
+import SKUPage from "./SKUPage";
+import ChartPage from "./ChartPage";
 
 const Dashboard: React.FunctionComponent = () => {
   const dashboardItems = ["Store", "SKU", "Planning", "Charts"];
   const [activeTab, setActiveTab] = useState(dashboardItems[0]);
   const [collapse, setCollapse] = useState(false);
+
+  const componentsMap: Record<string, JSX.Element> = {
+    Store: <StorePage />,
+    SKU: <SKUPage />,
+    Planning: <PlanningPage />,
+  };
 
   return (
     <>
@@ -34,7 +44,9 @@ const Dashboard: React.FunctionComponent = () => {
             })}
           </div>
         </div>
-        <div className="w-full bg-amber-100 p-7">This is for main content</div>
+        <div className="w-full bg-amber-100 p-7">
+          {componentsMap[activeTab] || <ChartPage />}
+        </div>
       </div>
     </>
   );
