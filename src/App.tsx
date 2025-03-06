@@ -1,7 +1,7 @@
 import './App.css'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { useAppSelector } from './redux/hooks'
-import Login from './pages/login'
+import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 
 function App() {
